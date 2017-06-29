@@ -1,0 +1,34 @@
+{% unless featured_collection_width %}
+  {% assign featured_collection_width = 'small--one-half medium--one-third large--one-sixth' %}
+{% endunless %}
+
+{% unless featured_collection_size %}
+  {% assign featured_collection_size = '540x' %}
+{% endunless %}
+
+{% if collections[featured].image %}
+  {% assign collection_image = collections[featured].image %}
+{% else %}
+  {% assign collection_image = collections[featured].products.first.featured_image %}
+{% endif %}
+
+<div class="grid-item {{ featured_collection_width }}">
+
+  {% capture collection_title %}{{ collections[featured].title | escape }}{% endcapture %}
+  <a href="{{ collections[featured].url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}" class="featured-box">
+    <div class="featured-box--inner">
+      <div class="featured-box--image">
+        {% unless collections[featured] == empty %}
+          <img src="{{ collection_image | img_url: featured_collection_size }}"
+          srcset="{{ collection_image | img_url: featured_collection_size }} 1x, {{ collection_image | img_url: featured_collection_size, scale: 2 }} 2x"
+          alt="{{ collection_title | escape }}"/>
+        {% else %}
+          {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+          {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endunless %}
+      </div>
+    </div>
+    <span class="featured-box--title">{% if collection_title != blank %}{{ collection_title }}{% else %}{{ 'homepage.featured_collection_rows.heading' | t }}{% endif %}</span>
+  </a>
+
+</div>

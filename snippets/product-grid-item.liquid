@@ -1,91 +1,71 @@
-<!-- /snippets/product-grid-item.liquid -->
-{% comment %}
-
-  This snippet is used to showcase each product during the loop,
-  'for product in collection.products' in collection.liquid.
-
-  A liquid variable (grid_item_width) is set just before the this
-  snippet is included to change the size of the container.
-  Once the variable is set on a page, all future instances of this
-  snippet will use that width. Overwrite the variable to adjust this.
-
-  Example
-    - assign grid_item_width = 'large--one-quarter medium--one-half'
-
-{% endcomment %}
-
-{% comment %}
-  Set the default grid_item_width if no variable is set
-{% endcomment %}
 {% unless grid_item_width %}
-  {% assign grid_item_width = 'large--one-third medium--one-half' %}
+  {% assign grid_item_width = 'large--one-quarter medium-down--one-half' %}
 {% endunless %}
 
-{% comment %}
-  Check if the product is on sale and set a variable to be used below.
-{% endcomment %}
+{% unless image_size %}
+  {%- assign image_size = '600x600' -%}
+{% endunless %}
+
+{% unless current_collection %}
+  {% assign current_collection = collection %}
+{% endunless %}
+
 {% assign on_sale = false %}
 {% if product.compare_at_price > product.price %}
   {% assign on_sale = true %}
 {% endif %}
 
-{% comment %}
-  Check if the product is sold out and set a variable to be used below.
-{% endcomment %}
 {% assign sold_out = true %}
-{% if product.available %}
+{% if product.available  %}
   {% assign sold_out = false %}
 {% endif %}
 
-<div class="grid__item {{ grid_item_width }}">
+<div class="grid-item {{ grid_item_width }}{% if sold_out %} sold-out{% endif %}{% if on_sale %} on-sale{% endif %}">
 
-  {% comment %}
-    Link to your product with the 'within: collection' filter for the link to be aware of the collection.
-    This allows you to create collection-based navigation on the product page.
+  <a href="{{ product.url | within: current_collection }}" class="product-grid-item">
+    <div class="product-grid-image">
+      <div class="product-grid-image--centered">
+        {% if sold_out %}
+          <div class="badge badge--sold-out"><span class="badge-label">{{ 'products.product.sold_out' | t }}</span></div>
+        {% endif %}
+        <img src="{{ product.featured_image.src | img_url: image_size }}" 
+        srcset="{{ product.featured_image.src | img_url: image_size }} 1x, {{ product.featured_image.src | img_url: image_size, scale: 2 }} 2x"
+        alt="{{ product.featured_image.alt | escape }}">
+      </div>
+    </div>
 
-    Results of using 'within: collection':
-    - Instead of a URL with /products/product-handle
-      you would get /collections/collection-handle/products/product-handle
+    <p>{{ product.title }}</p>
 
-    For more info on navigation within a collection
-      - http://docs.shopify.com/support/your-store/collections/how-to-navigate-within-a-collection
+    <div class="product-item--price">
+      <span class="h1 medium--left">
+        {% if on_sale %}
+          <span class="visually-hidden">{{ "products.general.sale_price" | t }}</span>
+        {% else %}
+          <span class="visually-hidden">{{ "products.general.regular_price" | t }}</span>
+        {% endif %}
+        {% include 'price' with product.price %}
+        {% if on_sale and section.settings.product_show_compare_at_price %}
+          <small>
+            <s>
+              <span class="visually-hidden">{{ "products.general.regular_price" | t }}</span>
+              {% include 'price' with product.compare_at_price %}
+            </s>
+          </small>
+        {% endif %}
+      </span>
 
-  {% endcomment %}
-  <a href="{{ product.url | within: collection }}" class="grid__image">
-    <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
+      {% if on_sale and section.settings.product_show_saved_amount %}
+        <span class="sale-tag{% unless section.settings.show_compare_at_price %} medium--right{% endunless %}{% if section.settings.product_reviews_enable %} has-reviews{% endif %}">
+          {% assign compare_price = product.compare_at_price %}
+          {% assign product_price = product.price %}
+          {% include 'price-sale' %}
+        </span>
+      {% endif %}
+    </div>
+
+    {% if section.settings.product_reviews_enable %}
+      <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+    {% endif %}
   </a>
-
-  <p class="h6">
-    <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
-  </p>
-  <p>
-    {% comment %}
-      You can show a leading 'from' or 'up to' by checking 'product.price_varies'
-      if your variants have different prices.
-    {% endcomment %}
-    {% if on_sale %}
-      {% if product.price_varies %}
-        {% assign sale_price = product.price | money %}
-        {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
-      {% else %}
-        <strong>{{ 'products.product.on_sale' | t }}</strong>
-        {{ product.price | money }}
-      {% endif %}
-    {% else %}
-      {% if product.price_varies %}
-        {% assign price = product.price | money %}
-        {{ 'products.general.from_text_html' | t: price: price }}
-      {% else %}
-        {{ product.price | money }}
-      {% endif %}
-    {% endif %}
-    {% if sold_out %}
-      <br><strong>{{ 'products.product.sold_out' | t }}</strong>
-    {% endif %}
-    {% if on_sale %}
-      <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
-      <br><s>{{ product.compare_at_price | money }}</s>
-    {% endif %}
-  </p>
 
 </div>

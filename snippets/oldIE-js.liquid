@@ -1,4 +1,3 @@
-<!-- /snippets/oldIE-js.liquid -->
 {% comment %}
   oldIE fixes/shivs
   HTML5 shiv, Selectivizer
@@ -13,4 +12,4 @@
 <link href="//{{ shop.domain }}/search?q={{ respond_js_secret_key }}" id="respond-redirect" rel="respond-redirect" />
 <script src="//{{ shop.domain }}/search?q={{ respond_js_secret_key }}" type="text/javascript"></script>
 <![endif]-->
-
+<!--[if (lte IE 9) ]>{{ 'match-media.min.js' | asset_url | script_tag }}<![endif]-->

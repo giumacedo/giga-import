@@ -1,13 +1,11 @@
-<!-- /templates/page.liquid -->
+{% include 'breadcrumb' %}
+
 <div class="grid">
 
-  <div class="grid__item large--two-thirds push--large--one-sixth">
+  <div class="grid-item large--two-thirds push--large--one-sixth">
 
     <h1>{{ page.title }}</h1>
 
-    {% comment %}
-      Regular page content goes here.
-    {% endcomment %}
     <div class="rte">
       {{ page.content }}
     </div>
