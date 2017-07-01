@@ -9,7 +9,7 @@
     },
     "404": {
       "title": "ページが見つかりません",
-      "subtext_html": "お探しのページが存在しません。 <a href=\"\/\" class=\"text-link\">こちらをクリックして<\/a>買い物を続ける。"
+      "subtext_html": "お探しのページが存在しません。 <a href=\"/\" class=\"text-link\">こちらをクリックして</a>買い物を続ける。"
     },
     "password_page": {
       "spread_the_word": "他の人に広めましょう:",
@@ -19,7 +19,7 @@
       "login_form_submit": "入力する",
       "signup_form_email_label": "メール",
       "signup_form_success": "ストアがオープンする直前にメールでお知らせします！",
-      "admin_link_html": "あなたはストアのオーナーですか？<a href=\"\/admin\" class=\"text-link\">こちらからログインする<\/a>",
+      "admin_link_html": "あなたはストアのオーナーですか？<a href=\"/admin\" class=\"text-link\">こちらからログインする</a>",
       "password_link": "パスワードを入力してください",
       "powered_by_shopify_html": "このお店は{{ shopify }}を使用しています",
       "close": "閉じる"
@@ -29,7 +29,7 @@
       "home_link_title": "フロントページへ戻る"
     },
     "forms": {
-      "post_field_error_html": "The <strong>{{ field }}<\/strong> {{ error }}"
+      "post_field_error_html": "The <strong>{{ field }}</strong> {{ error }}"
     },
     "search": {
       "no_results_html": "\"{{ terms }}\"の検索に一致する商品はありませんでした。",
@@ -87,7 +87,7 @@
       "checkout": "チェックアウト",
       "empty": "カート内に商品がありません。",
       "cookies_required": "カートを使うためにCookieを有効にする",
-      "continue_browsing_html": "<a href=\"\/collections\/all\">こちら<\/a>を押して買い物を続ける。",
+      "continue_browsing_html": "<a href=\"/collections/all\">こちら</a>を押して買い物を続ける。",
       "or": "or",
       "view_cart": "カートを見る",
       "close_cart": "カートを閉じる",
@@ -242,7 +242,7 @@
     "featured_collections": {
       "heading": "買い物をする",
       "more_categories": "より多くのカテゴリー",
-      "no_collections_html": "こちらに表示されるコレクションがありません。Theme Settingから<a href=\"\/admin\/themes\/\">オススメのコレクションを追加する<\/a>。",
+      "no_collections_html": "こちらに表示されるコレクションがありません。Theme Settingから<a href=\"/admin/themes/\">オススメのコレクションを追加する</a>。",
       "example_collection": "コレクションの例"
     },
     "featured_collection_rows": {
@@ -251,7 +251,7 @@
       "example_product_title": "商品タイトルの例",
       "more_in_collection": "さらに詳しく {{ collection_title }}"
     },
-    "onboarding": {
+    "onboarding":{
       "no_content": "このセクションには現在コンテンツがございません。サイドバーを使ってコンテンツを追加しましょう。"
     }
   },
@@ -318,4 +318,5 @@
       "add_to_apple_wallet": "Apple Walletに追加する"
     }
   }
+
 }

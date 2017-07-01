@@ -4,8 +4,8 @@
     "theme_name": "Supply",
     "theme_author": "Shopify",
     "theme_version": "2.0.6",
-    "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/using-themes\/themes-by-shopify\/supply",
-    "theme_support_url": "https:\/\/support.shopify.com\/"
+    "theme_documentation_url": "https://help.shopify.com/manual/using-themes/themes-by-shopify/supply",
+    "theme_support_url": "https://support.shopify.com/"
   },
   {
     "name": "Colors",
@@ -709,10 +709,10 @@
         "type": "image_picker",
         "id": "favicon",
         "label": "Favicon image",
-        "info": "Will be scaled down to 32 x 32px"
-      }
-    ]
-  },
+         "info": "Will be scaled down to 32 x 32px"
+       }
+     ]
+   },
   {
     "name": "Cart",
     "settings": [

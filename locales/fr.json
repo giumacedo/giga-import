@@ -9,7 +9,7 @@
     },
     "404": {
       "title": "404 page non trouvée",
-      "subtext_html": "La page que vous avez demandée n'existe pas. Cliquez <a href=\"\/collections\/all\">ici<\/a> pour continuer à magasiner."
+      "subtext_html": "La page que vous avez demandée n'existe pas. Cliquez <a href=\"/collections/all\">ici</a> pour continuer à magasiner."
     },
     "password_page": {
       "spread_the_word": "Passez le mot:",
@@ -19,7 +19,7 @@
       "login_form_submit": "Entrer",
       "signup_form_email_label": "Courriel",
       "signup_form_success": "Nous vous ferons parvenir un courriel juste avant l'ouverture!",
-      "admin_link_html": "Êtes-vous le propriétaire de la boutique? <a href=\"\/admin\" class=\"text-link\">Connectez-vous ici<\/a>.",
+      "admin_link_html": "Êtes-vous le propriétaire de la boutique? <a href=\"/admin\" class=\"text-link\">Connectez-vous ici</a>.",
       "password_link": "Entrer avec un mot de passe",
       "powered_by_shopify_html": "Cette boutique sera propulsée par {{ shopify }}",
       "close": "Fermer (Esc)"
@@ -29,7 +29,7 @@
       "home_link_title": "Revenir à la première page"
     },
     "forms": {
-      "post_field_error_html": "<strong>{{ field }}<\/strong> {{ error }}"
+      "post_field_error_html": "<strong>{{ field }}</strong> {{ error }}"
     },
     "search": {
       "no_results_html": "Votre recherche, « {{ terms }} », n'a donné aucun résultat.",
@@ -87,7 +87,7 @@
       "checkout": "Passer à la caisse",
       "empty": "Votre panier est vide actuellement.",
       "cookies_required": "Activer les cookies pour utiliser le panier",
-      "continue_browsing_html": "Continuez à parcourir notre catalogue <a href=\"\/collections\/all\">ici<\/a>.",
+      "continue_browsing_html": "Continuez à parcourir notre catalogue <a href=\"/collections/all\">ici</a>.",
       "or": "ou",
       "view_cart": "Voir le panier",
       "close_cart": "Fermer le panier",
@@ -162,7 +162,7 @@
       "city": "Ville",
       "country": "Pays",
       "province": "Province",
-      "zip": "Code postal\/ZIP",
+      "zip": "Code postal/ZIP",
       "phone": "Téléphone",
       "set_default": "Définir comme adresse par défaut?",
       "add": "Ajouter une adresse",
@@ -242,7 +242,7 @@
     "featured_collections": {
       "heading": "Acheter",
       "more_categories": "Plus de catégories",
-      "no_collections_html": "Vous n'avez pas de collection à montrer ici. <a href=\"\/admin\/themes\/\">Ajoutez des collections en vedette<\/a> dans vos paramètres de thème.",
+      "no_collections_html": "Vous n'avez pas de collection à montrer ici. <a href=\"/admin/themes/\">Ajoutez des collections en vedette</a> dans vos paramètres de thème.",
       "example_collection": "Collection en exemple"
     },
     "featured_collection_rows": {
@@ -251,7 +251,7 @@
       "example_product_title": "Exemple de titre de produit",
       "more_in_collection": "Toute la collection {{ collection_title }}"
     },
-    "onboarding": {
+    "onboarding":{
       "no_content": "Cette section ne contient actuellement aucun contenu. Ajoutez-en en utilisant la barre latérale."
     }
   },
