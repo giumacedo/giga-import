@@ -58,9 +58,11 @@
           <br class="medium-down--hide">
         {% endif %}
 
+        <span class="header-cart-price">{% include 'price' with cart.total_price %}</span>
+
         <a href="/cart" class="header-cart-btn cart-toggle">
           <span class="icon icon-cart"></span>
-          {{ 'layout.cart.cart' | t }} <span class="cart-count cart-badge--desktop {% if cart.item_count == 0 %}hidden-count{% endif %}">{{ cart.item_count }}</span>
+          <span class="cart-count cart-badge--desktop {% if cart.item_count == 0 %}hidden-count{% endif %}">{{ cart.item_count }}</span>
         </a>
       </div>
     </div>

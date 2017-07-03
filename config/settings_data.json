@@ -8,7 +8,7 @@
     "product_reviews_star_color": "#e5c649",
     "color_header_background": "#ffffff",
     "color_header_text": "#182e49",
-    "color_header_cart_search": "#0f243d",
+    "color_header_cart_search": "#f80808",
     "color_nav_bg": "#eeeeee",
     "color_nav_text": "#555555",
     "color_body_text": "#585858",
@@ -99,7 +99,7 @@
       "collection-row-1": {
         "type": "collection-rows",
         "settings": {
-          "home_featured_row": "computador-e-pecas",
+          "home_featured_row": "frontpage",
           "grid": "5",
           "product_show_saved_amount": true,
           "product_show_compare_at_price": false
