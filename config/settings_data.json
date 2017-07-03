@@ -80,16 +80,16 @@
       "slideshow": {
         "type": "slideshow",
         "blocks": {
-          "slide-0": {
+          "1499047184757": {
             "type": "image",
             "settings": {
-              "slide": "",
+              "slide": "shopify:\/\/shop_images\/computer_2f512e64-1e45-4d77-82dc-92703179e223.jpg",
               "link": ""
             }
           }
         },
         "block_order": [
-          "slide-0"
+          "1499047184757"
         ],
         "settings": {
           "slider_home_auto": false,
@@ -99,7 +99,7 @@
       "collection-row-1": {
         "type": "collection-rows",
         "settings": {
-          "home_featured_row": "frontpage",
+          "home_featured_row": "computador-e-pecas",
           "grid": "5",
           "product_show_saved_amount": true,
           "product_show_compare_at_price": false
